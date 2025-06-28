@@ -96,6 +96,8 @@ void EditView::render() {
         addButton("Vision Daltonnienne", [&] { outilActif = OutilActif::VisionDaltonien; });
         addButton("Luminosite & Contraste", [&] { outilActif = OutilActif::LumiContraste; paramInt1 = 0; paramInt2 = 0; });
         addButton("Rogner", [&] { outilActif = OutilActif::Rogner; paramInt1 = 0; paramInt2 = 0; paramInt3 = 0; paramInt4 = 0; });
+        addButton("Rotation", [&] { outilActif = OutilActif::Rotation; });
+		addButton("Retourner", [&] { outilActif = OutilActif::Retourner; });
         addButton("Sauvegarder", [&] { /* TODO */ });
         addButton("Annuler", [&] {
             image = getHistoriqueImage(historique.size() - 1);
@@ -231,6 +233,14 @@ void EditView::renderSidebar() {
         renderRogner();
 		break;
 
+	case OutilActif::Rotation:
+		renderRotation();
+		break;
+
+	case OutilActif::Retourner:
+		renderRetourner();
+		break;
+
     default:
         ImGui::Text("Outil inconnu.");
         break;
@@ -328,6 +338,28 @@ void EditView::renderRogner() {
 		paramInt3 = 0;
 		paramInt4 = 0; 
     }
+}
+
+void EditView::renderRotation() {
+	ImGui::Text("Rotation de l'image :");
+	if (ImGui::Button("90 degres Droite")) {
+		setImage(image.rotationD());
+	}
+	ImGui::SameLine();
+	if (ImGui::Button("90 degres Gauche")) {
+		setImage(image.rotationG());
+	}
+}
+
+void EditView::renderRetourner() {
+	ImGui::Text("Retourner l'image :");
+	if (ImGui::Button("Symetrie Verticale")) {
+		setImage(image.retournementV());
+	}
+	ImGui::SameLine();
+	if (ImGui::Button("Symetrie Horizontale")) {
+		setImage(image.retournementH());
+	}
 }
 
 

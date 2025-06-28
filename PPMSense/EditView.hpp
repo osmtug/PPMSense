@@ -11,6 +11,8 @@ enum class OutilActif {
 	VisionDaltonien,
 	LumiContraste,
 	Rogner,
+	Rotation,
+	Retourner,
 	
 };
 
@@ -30,6 +32,10 @@ public:
 	void renderLumiContraste();
 
 	void renderRogner();
+
+	void renderRotation();
+
+	void renderRetourner();
 
 	void renderDaltonien();
 
