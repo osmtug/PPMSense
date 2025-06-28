@@ -5,6 +5,7 @@
 #include <gl/GL.h>
 #include <functional>
 
+
 int paramInt1 = 0;
 int paramInt2 = 0;
 int paramInt3 = 0;
@@ -98,8 +99,8 @@ void EditView::render() {
         addButton("Rogner", [&] { outilActif = OutilActif::Rogner; paramInt1 = 0; paramInt2 = 0; paramInt3 = 0; paramInt4 = 0; });
         addButton("Rotation", [&] { outilActif = OutilActif::Rotation; });
 		addButton("Retourner", [&] { outilActif = OutilActif::Retourner; });
-        addButton("Sauvegarder", [&] { /* TODO */ });
-        addButton("Annuler", [&] {
+        addButton("Sauvegarder", [&] { outilActif = OutilActif::Sauvegarder; });
+        addButton("Annuler (la derniere modif)", [&] {
             image = getHistoriqueImage(historique.size() - 1);
             refreshImage();
         });
@@ -210,7 +211,7 @@ void EditView::renderSidebar() {
 
     switch (outilActif) {
     case OutilActif::Aucun:
-        ImGui::Text("Sélectionnez une action à gauche.");
+        ImGui::Text("Selectionnez une action en bas, à gauche.");
         break;
 
     case OutilActif::Flou:
@@ -240,6 +241,9 @@ void EditView::renderSidebar() {
 	case OutilActif::Retourner:
 		renderRetourner();
 		break;
+
+    case OutilActif::Sauvegarder:
+        renderSauvegarde();
 
     default:
         ImGui::Text("Outil inconnu.");
@@ -361,5 +365,57 @@ void EditView::renderRetourner() {
 		setImage(image.retournementH());
 	}
 }
+
+void couperDernierDossier(char* path) {
+    char* dernierSlash = std::strrchr(path, '\\');
+    if (dernierSlash) {
+        *dernierSlash = '\0'; // Coupe la chaîne ici
+    }
+}
+
+void EditView::renderSauvegarde() {
+    static char dossierPath[1024] = "";
+    static char nomFichier[256] = "";
+
+    ImGui::Text("Chemin du dossier de sauvegarde :");
+
+    ImGui::PushItemWidth(ImGui::GetContentRegionAvail().x - 110);
+    ImGui::InputText("##DossierPath", dossierPath, sizeof(dossierPath));
+    ImGui::PopItemWidth();
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Parcourir...")) {
+        const char* filterPatterns[] = { "aucun" };
+        const char* path = tinyfd_saveFileDialog(
+            "Choisir un fichier .ppm à sauvegarder",
+            "ne_pas_remplir", // Nom de fichier par défaut
+            1,
+            filterPatterns,
+            "Fichiers PPM"
+        );
+
+        if (path) {
+            strncpy_s(dossierPath, sizeof(dossierPath), path, _TRUNCATE);
+        }
+		couperDernierDossier(dossierPath); // Coupe le nom du fichier pour ne garder que le dossier
+    }
+
+    ImGui::Spacing();
+    ImGui::Text("Nom du fichier (avec extension .ppm par exemple) :");
+    ImGui::InputText("##NomFichier", nomFichier, sizeof(nomFichier));
+
+    ImGui::Spacing();
+    if (ImGui::Button("Sauvegarder")) {
+        std::string cheminComplet = std::string(dossierPath) + "/" + nomFichier;
+		image.faitImage(cheminComplet);
+		tinyfd_messageBox("Sauvegarde réussie", ("Image sauvegardée sous : " + cheminComplet).c_str(), "info", "ok", 1);
+
+        viewManager->popView();
+        outilActif = OutilActif::Aucun;
+    }
+}
+
+
 
 

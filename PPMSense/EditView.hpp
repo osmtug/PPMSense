@@ -3,6 +3,7 @@
 #include "IView.hpp"
 #include <string>
 #include "fonction.hpp"
+#include <tinyfiledialogs.h>
 
 enum class OutilActif {
 	Aucun,
@@ -13,7 +14,7 @@ enum class OutilActif {
 	Rogner,
 	Rotation,
 	Retourner,
-	
+	Sauvegarder
 };
 
 class EditView : public IView {
@@ -36,6 +37,8 @@ public:
 	void renderRotation();
 
 	void renderRetourner();
+
+	void renderSauvegarde();
 
 	void renderDaltonien();
 
