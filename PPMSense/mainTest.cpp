@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include "fonction.h"
+#include "fonction.hpp"
 
 using namespace std;
 

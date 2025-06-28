@@ -3,7 +3,9 @@
 #include <string>
 #include <fstream>
 #include <cmath>
-#include "fonction.h"
+#include "fonction.hpp"
+#include <SFML/Graphics.hpp>
+#include <sstream>
 
 using namespace std;
 
@@ -36,12 +38,31 @@ Image::Image()
 
 Image::Image(const string nomFichier)
 {
-    loadPicture(nomFichier, _rouge, _vert, _bleu);
+    if (!loadPicture(nomFichier, _rouge, _vert, _bleu)) {
+		throw(invalid_argument("le fichier n'existe pas ou n'est pas au format ppm"));
+    }
     _longueur = _rouge.size();
     _largeur = _rouge[0].size();
 }
 
+sf::Image Image::genererSFImage() {
+    sf::Image img;
+    img.create(_largeur, _longueur);
 
+    for (int y = 0; y < _longueur; ++y) {
+        for (int x = 0; x < _largeur; ++x) {
+            
+            sf::Color pixel(
+                static_cast<sf::Uint8>(_rouge[y][x]),
+                static_cast<sf::Uint8>(_vert[y][x]),
+                static_cast<sf::Uint8>(_bleu[y][x])
+            );
+            img.setPixel(x, y, pixel);
+        }
+    }
+
+    return img;
+}
 
 void Image::affiche() const
 {
@@ -589,7 +610,7 @@ int choix(Image& i, int c)
 
 }
 
-void loadPicture(const string &picture, vector<vector<int>> &red,
+bool loadPicture(const string &picture, vector<vector<int>> &red,
                  vector<vector<int>> &green,
                  vector <vector<int>> &blue)
 {
@@ -611,20 +632,31 @@ void loadPicture(const string &picture, vector<vector<int>> &red,
     {
         //cin.rdbuf(oldbuf);
         cerr << "Erreur! Impossible de lire de fichier " << name << " ! " << endl;
-        cerr << "Redonnez le nom du fichier a ouvrir SVP. Attention ce fichier doit avoir un nom du type nom.ppm." << endl;
-        cin >> name;
-        mettreFormatPpm(name);
-        entree.open(name); // relance
+        return false;
     }
     // Lecture du nombre definissant le format (ici P3)
     entree >> format;
-    // on finit de lire la ligne (caractere d'espacement)
-    getline(entree, line);
     // Lecture du commentaire
-    getline(entree, line);
-    //lecture des dimensions
-    entree >> taille >> hauteur;
-    getline(entree, line); // on finit de lire la ligne (caractere d'espacement)
+    while (std::getline(entree, line)) {
+        // Si la ligne est vide, on continue
+        if (line.empty()) continue;
+
+        // Si ce n'est pas un commentaire, on suppose que c'est la ligne des dimensions
+        if (line[0] != '#') {
+            std::istringstream iss(line);
+            iss >> taille >> hauteur;
+            break;
+        }
+        // Sinon, on ignore la ligne car c'est un commentaire
+    }
+
+    //// Lecture du commentaire
+    //getline(entree, line); // on lit la ligne du commentaire, qui est optionnelle dans le format PPM
+    ////lecture des dimensions
+    //entree >> taille >> hauteur;
+    
+    
+
     // On verifie que l'image a une taille qui verifie bien les conditions requises par l'enonce.
     // Si cela n'est pas le cas, on redemande un fichier valide, et ce, tant que necessaire.
     while (format != "P3")
@@ -636,21 +668,7 @@ void loadPicture(const string &picture, vector<vector<int>> &red,
         }
         entree.close();
         // On va redemander un nom de fichier valide.
-        do
-        {
-            cerr << "Veuillez redonner un nom de fichier qui respecte les conditions de format et de taille. Attention, ce nom doit etre de la forme nom.ppm." << endl;
-            cin >> name;
-            entree.open(name); // relance
-        }
-        while(!entree);
-        // Lecture du nombre definissant le format (ici P3)
-        entree >> format;
-        getline(entree, line); // on finit de lire la ligne (caractere d'espacement)
-        // Lecture du commentaire
-        getline(entree, line);
-        //lecture des dimensions
-        entree >> taille >> hauteur; // relance
-        getline(entree, line); // on finit de lire la ligne (caractere d'espacement)
+		return false;
     }
     //Lecture de la valeur max
     getline(entree, line);
@@ -712,6 +730,25 @@ void Image::faitImage() const
     sortie << "P3" << endl;
     sortie << "# " << nom << endl;
     sortie << _largeur << " " << _longueur<< endl;
+    sortie << "255" << endl;
+    for (int i = 0; i < _longueur; i++)
+    {
+        for (int j = 0; j < _largeur; j++)
+        {
+            sortie << _rouge[i][j] << " " << _vert[i][j] << " " << _bleu[i][j] << " ";
+        }
+        sortie << endl;
+    }
+}
+
+void Image::faitImage(string nom) const
+{
+    mettreFormatPpm(nom);
+    ofstream sortie;
+    sortie.open(nom);
+    sortie << "P3" << endl;
+    sortie << "# " << nom << endl;
+    sortie << _largeur << " " << _longueur << endl;
     sortie << "255" << endl;
     for (int i = 0; i < _longueur; i++)
     {

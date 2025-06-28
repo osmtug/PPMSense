@@ -13,9 +13,363 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\librairie">
+      <UniqueIdentifier>{40b1425c-1457-4d9f-b875-f66aa28d9cc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\librairie\sfml">
+      <UniqueIdentifier>{92ab3bcb-5ef9-42bc-a8a1-3180d1c4b900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\librairie\imgui">
+      <UniqueIdentifier>{d83065d1-d632-4f39-8d65-68fafaeec4a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\librairie\imgui+sfml">
+      <UniqueIdentifier>{7d8aa97a-8c67-4392-8c07-f908b2277df7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\librairie\tynifiledialogue">
+      <UniqueIdentifier>{e37999ba-7590-4525-ae7e-b99d124f6a62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fonction.h">
+    <ClInclude Include="fonction.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="App.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui\imconfig.h">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui\imgui.h">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui\imgui_internal.h">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui\imstb_rectpack.h">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui\imstb_textedit.h">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui\imstb_truetype.h">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\AlResource.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\Export.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\InputSoundFile.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\Listener.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\Music.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\OutputSoundFile.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\Sound.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundBuffer.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundBufferRecorder.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundFileFactory.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundFileReader.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundFileWriter.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundRecorder.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundSource.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio\SoundStream.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Audio.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Config.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\GpuPreference.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\BlendMode.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\CircleShape.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Color.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\ConvexShape.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Drawable.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Export.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Font.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Glsl.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Glyph.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Image.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\PrimitiveType.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Rect.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\RectangleShape.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\RenderStates.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\RenderTarget.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\RenderTexture.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\RenderWindow.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Shader.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Shape.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Sprite.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Text.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Texture.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Transform.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Transformable.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\Vertex.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\VertexArray.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\VertexBuffer.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics\View.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Graphics.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Main.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\Export.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\Ftp.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\Http.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\IpAddress.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\Packet.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\Socket.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\SocketHandle.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\SocketSelector.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\TcpListener.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\TcpSocket.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network\UdpSocket.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Network.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\OpenGL.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Clock.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Err.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Export.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\FileInputStream.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\InputStream.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Lock.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\MemoryInputStream.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Mutex.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\NativeActivity.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\NonCopyable.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Sleep.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\String.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Thread.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\ThreadLocal.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\ThreadLocalPtr.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Time.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Utf.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Vector2.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System\Vector3.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\System.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Clipboard.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Context.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\ContextSettings.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Cursor.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Event.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Export.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\GlResource.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Joystick.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Keyboard.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Mouse.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Sensor.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Touch.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\VideoMode.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\Window.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\WindowHandle.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window\WindowStyle.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\SFML\include\SFML\Window.hpp">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui-sfml\imgui-SFML.h">
+      <Filter>Fichiers sources\librairie\imgui+sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui-sfml\imgui-SFML_export.h">
+      <Filter>Fichiers sources\librairie\imgui+sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\imgui-sfml\imconfig-SFML.h">
+      <Filter>Fichiers sources\librairie\imgui+sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\tinyfiledialogs\tinyfiledialogs.h">
+      <Filter>Fichiers sources\librairie\tynifiledialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="FilePickerView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="EditView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManager.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="IView.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -29,5 +383,73 @@
     <ClCompile Include="mainTest.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\imgui\imgui.cpp">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\imgui\imgui_demo.cpp">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\imgui\imgui_draw.cpp">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\imgui\imgui_tables.cpp">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\imgui\imgui_widgets.cpp">
+      <Filter>Fichiers sources\librairie\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\imgui-sfml\imgui-SFML.cpp">
+      <Filter>Fichiers sources\librairie\imgui+sfml</Filter>
+    </ClCompile>
+    <ClCompile Include="librairies\tinyfiledialogs\tinyfiledialogs.c">
+      <Filter>Fichiers sources\librairie\tynifiledialogue</Filter>
+    </ClCompile>
+    <ClCompile Include="FilePickerView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="EditView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="librairies\SFML\include\SFML\Audio\SoundFileFactory.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\Graphics\Glsl.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\Graphics\Rect.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\System\String.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\System\Thread.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\System\ThreadLocalPtr.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\System\Utf.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\System\Vector2.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
+    <None Include="librairies\SFML\include\SFML\System\Vector3.inl">
+      <Filter>Fichiers sources\librairie\sfml</Filter>
+    </None>
   </ItemGroup>
 </Project>
