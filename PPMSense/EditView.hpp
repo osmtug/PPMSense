@@ -19,6 +19,8 @@ public:
     EditView(const std::string& filePath);
     void render() override;
 
+	void renderImageWithOverlay(bool modeRognage);
+
     void refreshImage();
 
 	void renderFloue();

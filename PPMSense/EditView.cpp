@@ -24,8 +24,6 @@ EditView::EditView(const std::string& path)
     }
 }
 
-bool afficherOptionsFlou = false;
-
 void EditView::render() {
     ImGuiViewport* viewport = ImGui::GetMainViewport();
     ImGui::SetNextWindowPos(viewport->WorkPos);
@@ -58,28 +56,8 @@ void EditView::render() {
 
     ImGui::Text("Fichier : %s", imagePath.c_str());
 
-    if (loaded) {
-        sf::Vector2u imgSize = texture.getSize();
-        ImVec2 avail = ImGui::GetContentRegionAvail();
-
-        // Calcul du facteur d’échelle pour garder les proportions
-        float scaleX = avail.x / imgSize.x;
-        float scaleY = avail.y / imgSize.y;
-        float scale = std::min(scaleX, scaleY);
-
-        ImVec2 finalSize = ImVec2(imgSize.x * scale, imgSize.y * scale);
-
-        // Centrer l’image horizontalement
-        float centerX = (avail.x - finalSize.x) * 0.5f;
-        if (centerX < 0) centerX = 0;
-        ImGui::SetCursorPosX(ImGui::GetCursorPosX() + centerX);
-
-        GLuint textureID = texture.getNativeHandle();
-        ImGui::Image((ImTextureID)(intptr_t)textureID, finalSize);
-    }
-    else {
-        ImGui::TextColored(ImVec4(1, 0, 0, 1), "Erreur de chargement de l'image !");
-    }
+	renderImageWithOverlay(outilActif == OutilActif::Rogner);
+    
 
     ImGui::EndChild(); // Fin partie haute
 
@@ -138,7 +116,84 @@ void EditView::render() {
     ImGui::End();
 }
 
+void EditView::renderImageWithOverlay(bool modeRognage) {
+    if (!loaded) {
+        ImGui::TextColored(ImVec4(1, 0, 0, 1), "Image non chargée !");
+        return;
+    }
 
+    sf::Vector2u imgSize = texture.getSize();
+    ImVec2 avail = ImGui::GetContentRegionAvail();
+
+    // Calcul du facteur d’échelle pour garder les proportions
+    float scaleX = avail.x / imgSize.x;
+    float scaleY = avail.y / imgSize.y;
+    float scale = std::min(scaleX, scaleY);
+
+    ImVec2 finalSize = ImVec2(imgSize.x * scale, imgSize.y * scale);
+
+    // Centrer l’image horizontalement
+    float centerX = (avail.x - finalSize.x) * 0.5f;
+    if (centerX < 0) centerX = 0;
+    ImGui::SetCursorPosX(ImGui::GetCursorPosX() + centerX);
+
+    // Affichage de l’image
+    GLuint textureID = texture.getNativeHandle();
+    ImGui::Image((ImTextureID)(intptr_t)textureID, finalSize);
+
+    if (modeRognage) {
+        // Dessin des zones à rogner
+        ImDrawList* drawList = ImGui::GetWindowDrawList();
+        ImVec2 imagePos = ImGui::GetItemRectMin();
+
+        // Couleur semi-transparente noire
+        ImU32 overlayColor = IM_COL32(0, 0, 0, 180);
+
+        // Convertir les pixels rognés en taille écran
+        float hTop = paramInt1 * scale;
+        float hBottom = paramInt2 * scale;
+        float wLeft = paramInt3 * scale;
+        float wRight = paramInt4 * scale;
+
+        // Rectangle haut
+        drawList->AddRectFilled(
+            imagePos,
+            ImVec2(imagePos.x + finalSize.x, imagePos.y + hTop),
+            overlayColor
+        );
+
+        // Rectangle bas
+        drawList->AddRectFilled(
+            ImVec2(imagePos.x, imagePos.y + finalSize.y - hBottom),
+            ImVec2(imagePos.x + finalSize.x, imagePos.y + finalSize.y),
+            overlayColor
+        );
+
+        // Rectangle gauche
+        drawList->AddRectFilled(
+            ImVec2(imagePos.x, imagePos.y + hTop),
+            ImVec2(imagePos.x + wLeft, imagePos.y + finalSize.y - hBottom),
+            overlayColor
+        );
+
+        // Rectangle droite
+        drawList->AddRectFilled(
+            ImVec2(imagePos.x + finalSize.x - wRight, imagePos.y + hTop),
+            ImVec2(imagePos.x + finalSize.x, imagePos.y + finalSize.y - hBottom),
+            overlayColor
+        );
+
+        // Bord blanc autour de la zone conservée
+        drawList->AddRect(
+            ImVec2(imagePos.x + wLeft, imagePos.y + hTop),
+            ImVec2(imagePos.x + finalSize.x - wRight, imagePos.y + finalSize.y - hBottom),
+            IM_COL32(255, 255, 255, 220),
+            0.0f,
+            0,
+            2.0f
+        );
+    }
+}
 
 
 void EditView::refreshImage() {
