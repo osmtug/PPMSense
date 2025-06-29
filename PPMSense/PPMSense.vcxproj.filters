@@ -28,6 +28,9 @@
     <Filter Include="Fichiers sources\librairie\tynifiledialogue">
       <UniqueIdentifier>{e37999ba-7590-4525-ae7e-b99d124f6a62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\librairie\eigen">
+      <UniqueIdentifier>{f734b90f-7423-46c8-91da-2e3c8765eecc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fonction.hpp">
@@ -372,6 +375,939 @@
     <ClInclude Include="IView.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="NewImageView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuralNetwork.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TrainModelView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CSVPickerView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Cholesky\LDLT.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Cholesky\LLT.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Cholesky\LLT_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\CholmodSupport\CholmodSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AltiVec\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AltiVec\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AltiVec\MatrixProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AltiVec\MatrixProductCommon.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AltiVec\MatrixProductMMA.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AltiVec\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX512\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX512\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX512\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\AVX512\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\CUDA\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\BFloat16.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\ConjHelper.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\GenericPacketMathFunctionsFwd.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\Half.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\Settings.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\Default\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\GPU\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\GPU\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\GPU\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\HIP\hcc\math_constants.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\MSA\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\MSA\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\MSA\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\NEON\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\NEON\GeneralBlockPanelKernel.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\NEON\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\NEON\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\NEON\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SSE\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SSE\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SSE\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SSE\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SVE\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SVE\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SVE\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SYCL\InteropHeaders.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SYCL\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SYCL\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SYCL\SyclMemoryModel.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\SYCL\TypeCasting.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\ZVector\Complex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\ZVector\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\arch\ZVector\PacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ArithmeticSequence.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Array.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ArrayBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ArrayWrapper.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Assign.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\AssignEvaluator.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Assign_MKL.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\BandMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Block.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\BooleanRedux.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CommaInitializer.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ConditionEstimator.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CoreEvaluators.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CoreIterators.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CwiseBinaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CwiseNullaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CwiseTernaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CwiseUnaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\CwiseUnaryView.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\DenseBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\DenseCoeffsBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\DenseStorage.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Diagonal.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\DiagonalMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\DiagonalProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Dot.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\EigenBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ForceAlignedAccess.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\functors\AssignmentFunctors.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\functors\BinaryFunctors.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\functors\NullaryFunctors.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\functors\StlFunctors.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\functors\TernaryFunctors.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\functors\UnaryFunctors.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Fuzzy.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\GeneralProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\GenericPacketMath.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\GlobalFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\IndexedView.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Inverse.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\IO.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Map.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\MapBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\MathFunctions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\MathFunctionsImpl.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Matrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\MatrixBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\NestByValue.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\NoAlias.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\NumTraits.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\PartialReduxEvaluator.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\PermutationMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\PlainObjectBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Product.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ProductEvaluators.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralBlockPanelKernel.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralMatrixMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralMatrixMatrixTriangular_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralMatrixMatrix_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralMatrixVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\GeneralMatrixVector_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\Parallelizer.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\SelfadjointMatrixMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\SelfadjointMatrixMatrix_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\SelfadjointMatrixVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\SelfadjointMatrixVector_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\SelfadjointProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\SelfadjointRank2Update.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularMatrixMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularMatrixMatrix_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularMatrixVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularMatrixVector_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularSolverMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularSolverMatrix_BLAS.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\products\TriangularSolverVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Random.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Redux.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Ref.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Replicate.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Reshaped.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\ReturnByValue.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Reverse.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Select.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\SelfAdjointView.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\SelfCwiseBinaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Solve.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\SolverBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\SolveTriangular.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\StableNorm.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\StlIterators.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Stride.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Swap.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Transpose.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Transpositions.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\TriangularMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\BlasUtil.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\ConfigureVectorization.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\Constants.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\DisableStupidWarnings.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\ForwardDeclarations.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\IndexedViewHelper.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\IntegralConstant.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\Macros.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\Memory.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\Meta.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\MKL_support.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\NonMPL2.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\ReenableStupidWarnings.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\ReshapedHelper.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\StaticAssert.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\SymbolicIndex.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\util\XprHelper.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\VectorBlock.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\VectorwiseOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Core\Visitor.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\ComplexEigenSolver.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\ComplexSchur.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\ComplexSchur_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\EigenSolver.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\GeneralizedEigenSolver.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\HessenbergDecomposition.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\RealQZ.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\RealSchur.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\RealSchur_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Eigenvalues\Tridiagonalization.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\AlignedBox.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\AngleAxis.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\arch\Geometry_SIMD.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\EulerAngles.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Homogeneous.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Hyperplane.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\OrthoMethods.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\ParametrizedLine.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Quaternion.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Rotation2D.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\RotationBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Scaling.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Transform.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Translation.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Geometry\Umeyama.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Householder\BlockHouseholder.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Householder\Householder.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Householder\HouseholderSequence.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\BasicPreconditioners.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\BiCGSTAB.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\ConjugateGradient.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\IncompleteCholesky.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\IncompleteLUT.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\IterativeSolverBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\LeastSquareConjugateGradient.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\IterativeLinearSolvers\SolveWithGuess.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\Jacobi\Jacobi.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\KLUSupport\KLUSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\LU\arch\InverseSize4.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\LU\Determinant.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\LU\FullPivLU.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\LU\InverseImpl.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\LU\PartialPivLU.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\LU\PartialPivLU_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\MetisSupport\MetisSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\blas.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\Image.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\Kernel.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\lapack.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\lapacke.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\lapacke_mangling.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\misc\RealSvd2x2.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\OrderingMethods\Amd.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\OrderingMethods\Eigen_Colamd.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\OrderingMethods\Ordering.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\PardisoSupport\PardisoSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\PaStiXSupport\PaStiXSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\ArrayCwiseBinaryOps.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\ArrayCwiseUnaryOps.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\BlockMethods.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\CommonCwiseBinaryOps.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\CommonCwiseUnaryOps.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\IndexedViewMethods.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\MatrixCwiseBinaryOps.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\MatrixCwiseUnaryOps.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\plugins\ReshapedMethods.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\QR\ColPivHouseholderQR.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\QR\ColPivHouseholderQR_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\QR\CompleteOrthogonalDecomposition.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\QR\FullPivHouseholderQR.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\QR\HouseholderQR.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\QR\HouseholderQR_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCholesky\SimplicialCholesky.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCholesky\SimplicialCholesky_impl.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\AmbiVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\CompressedStorage.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\ConservativeSparseSparseProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\MappedSparseMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseAssign.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseBlock.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseColEtree.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseCompressedBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseCwiseBinaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseCwiseUnaryOp.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseDenseProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseDiagonalProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseDot.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseFuzzy.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseMap.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseMatrixBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparsePermutation.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseProduct.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseRedux.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseRef.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseSelfAdjointView.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseSolverBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseSparseProductWithPruning.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseTranspose.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseTriangularView.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseUtil.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\SparseView.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseCore\TriangularSolver.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLUImpl.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_column_bmod.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_column_dfs.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_copy_to_ucol.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_gemm_kernel.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_heap_relax_snode.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_kernel_bmod.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_Memory.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_panel_bmod.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_panel_dfs.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_pivotL.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_pruneL.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_relax_snode.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_Structs.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_SupernodalMatrix.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseLU\SparseLU_Utils.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SparseQR\SparseQR.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SPQRSupport\SuiteSparseQRSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\StlSupport\details.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\StlSupport\StdDeque.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\StlSupport\StdList.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\StlSupport\StdVector.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SuperLUSupport\SuperLUSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SVD\BDCSVD.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SVD\JacobiSVD.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SVD\JacobiSVD_LAPACKE.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SVD\SVDBase.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\SVD\UpperBidiagonalization.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
+    <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\UmfPackSupport\UmfPackSupport.h">
+      <Filter>Fichiers sources\librairie\eigen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fonction.cpp">
@@ -420,6 +1356,30 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="ViewManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewImageView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="NeuralNetwork .cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TrainModelView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CSVPickerView.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveNetworkView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveNetworkView.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

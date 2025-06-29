@@ -8,6 +8,7 @@
 #include <vector>
 #include <cmath>
 #include <SFML/Graphics.hpp>
+#include <imgui.h>
 
 
 //constante pour les choix de l'utilisateur
@@ -49,14 +50,15 @@ using namespace std;
 
 class Image
 {
+    
+
+public:
+
     vector<vector<int>> _rouge;
     vector<vector<int>> _vert;
     vector<vector<int>> _bleu;
-	vector<vector<Image>> _historique; 
     int _longueur;
     int _largeur;
-
-public:
 
     ///constructeur avec des vecteurs
     Image(const vector<vector<int>> &rouge, const vector<vector<int>> &vert, const vector<vector<int>> &bleu);
@@ -64,8 +66,12 @@ public:
     ///constructeur vide
     Image();
 
+    Image(int, int);
+
     ///constructeur qui lit un fichier
     Image(const string nomFichier);
+
+    void setPixel(int x, int y, const ImVec4& color);
 
     sf::Image genererSFImage();
 

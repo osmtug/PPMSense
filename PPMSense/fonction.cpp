@@ -34,6 +34,15 @@ Image::Image()
     _largeur = _rouge[0].size();
 }
 
+Image::Image(int longu, int large)
+{
+    _largeur = large;
+    _longueur = longu;
+    _rouge = vector<vector<int>>(longu, vector<int>(large, 0));
+    _vert = vector<vector<int>>(longu, vector<int>(large, 0));
+    _bleu = vector<vector<int>>(longu, vector<int>(large, 0));
+}
+
 
 
 Image::Image(const string nomFichier)
@@ -43,6 +52,14 @@ Image::Image(const string nomFichier)
     }
     _longueur = _rouge.size();
     _largeur = _rouge[0].size();
+}
+
+void Image::setPixel(int x, int y, const ImVec4& color) {
+    if (x < 0 || y < 0 || x >= _largeur || y >= _longueur) return;
+
+    _rouge[y][x] = static_cast<int>(color.x * 255.0f);
+    _vert[y][x] = static_cast<int>(color.y * 255.0f);
+    _bleu[y][x] = static_cast<int>(color.z * 255.0f);
 }
 
 sf::Image Image::genererSFImage() {
