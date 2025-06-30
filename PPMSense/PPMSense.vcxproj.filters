@@ -1308,6 +1308,9 @@
     <ClInclude Include="librairies\eigen-3.4.0\Eigen\src\UmfPackSupport\UmfPackSupport.h">
       <Filter>Fichiers sources\librairie\eigen</Filter>
     </ClInclude>
+    <ClInclude Include="SaveNetworkView.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fonction.cpp">
@@ -1375,9 +1378,6 @@
     </ClCompile>
     <ClCompile Include="CSVPickerView.cpp">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SaveNetworkView.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
     <ClCompile Include="SaveNetworkView.cpp">
       <Filter>Fichiers sources</Filter>

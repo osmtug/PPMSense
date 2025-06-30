@@ -14,7 +14,8 @@ enum class OutilActif {
 	Rogner,
 	Rotation,
 	Retourner,
-	Sauvegarder
+	Sauvegarder,
+	GuessNumber,
 };
 
 class EditView : public IView {
@@ -37,6 +38,8 @@ public:
 	void renderRotation();
 
 	void renderRetourner();
+
+	void renderGuess();
 
 	void renderSauvegarde();
 

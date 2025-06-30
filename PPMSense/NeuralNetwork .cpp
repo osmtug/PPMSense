@@ -125,7 +125,29 @@ float NeuralNetwork::sigmoidDerivative(float y) {
     return y * (1.0f - y);
 }
 
-bool NeuralNetwork::save(const std::string& filename) const {
+static void mettreFormatNNO(std::string& s)
+{
+    if (s.size() > 4)
+    {
+        if (s[s.size() - 1] != 'o' || s[s.size() - 2] != 'n' || s[s.size() - 3] != 'n' || s[s.size() - 4] != '.')
+        {
+            s.push_back('.');
+            s.push_back('n');
+            s.push_back('n');
+            s.push_back('o');
+        }
+    }
+    else
+    {
+        s.push_back('.');
+        s.push_back('p');
+        s.push_back('p');
+        s.push_back('m');
+    }
+}
+
+bool NeuralNetwork::save(std::string& filename) const {
+    mettreFormatNNO(filename);
     std::ofstream file(filename);
     if (!file.is_open()) return false;
 
@@ -164,7 +186,8 @@ bool NeuralNetwork::save(const std::string& filename) const {
     return true;
 }
 
-bool NeuralNetwork::load(const std::string& filename) {
+bool NeuralNetwork::load(std::string& filename) {
+    mettreFormatNNO(filename);
     std::ifstream file(filename);
     if (!file.is_open()) return false;
 

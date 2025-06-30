@@ -6,6 +6,8 @@
 #include "fonction.hpp"
 #include <SFML/Graphics.hpp>
 #include <sstream>
+#include <Eigen/Dense>
+#include <stdexcept>
 
 using namespace std;
 
@@ -79,6 +81,113 @@ sf::Image Image::genererSFImage() {
     }
 
     return img;
+}
+
+Image Image::Redimensionner28x28() const {
+    Image img28 = Image(28,28);
+    
+
+    // Facteurs d'échelle
+    float facteurX = static_cast<float>(_largeur) / 28.0f;
+    float facteurY = static_cast<float>(_longueur) / 28.0f;
+
+    for (int y = 0; y < 28; ++y) {
+        for (int x = 0; x < 28; ++x) {
+            // Déterminer la zone dans l'image d'origine à prendre en compte
+            int x_start = static_cast<int>(x * facteurX);
+            int y_start = static_cast<int>(y * facteurY);
+            int x_end = static_cast<int>((x + 1) * facteurX);
+            int y_end = static_cast<int>((y + 1) * facteurY);
+
+            x_end = std::min(x_end, _largeur);
+            y_end = std::min(y_end, _longueur);
+
+            // Moyenne des pixels dans cette zone
+            int total_pixels = 0;
+            int somme_r = 0, somme_v = 0, somme_b = 0;
+
+            for (int j = y_start; j < y_end; ++j) {
+                for (int i = x_start; i < x_end; ++i) {
+                    somme_r += _rouge[j][i];
+                    somme_v += _vert[j][i];
+                    somme_b += _bleu[j][i];
+                    total_pixels++;
+                }
+            }
+
+            if (total_pixels > 0) {
+                img28._rouge[y][x] = somme_r / total_pixels;
+                img28._vert[y][x] = somme_v / total_pixels;
+                img28._bleu[y][x] = somme_b / total_pixels;
+            }
+        }
+    }
+
+    return img28;
+}
+
+
+Eigen::VectorXf Image::toEigenVector28x28() const {
+    Image tmp = this->NiveauGris();
+    Image gris = tmp.reglageAuto();
+
+    if (gris._longueur != 28 || gris._largeur != 28) {
+        throw std::runtime_error("L'image doit être de taille 28x28");
+    }
+
+    Eigen::VectorXf input(28 * 28);
+
+    for (int y = 0; y < 28; ++y) {
+        for (int x = 0; x < 28; ++x) {
+            int pixel = gris._rouge[y][x]; // Ou _vert ou _bleu, c’est la même en niveau de gris
+            input[y * 28 + x] = pixel / 255.0f; // Normalisation [0.0, 1.0]
+        }
+    }
+
+    return input;
+}
+
+Image Image::Inverser() const {
+    Image result = *this;
+
+    for (int y = 0; y < _largeur; ++y) {
+        for (int x = 0; x < _longueur; ++x) {
+            result._rouge[y][x] = 255 - _rouge[y][x];
+            result._vert[y][x] = 255 - _vert[y][x];
+            result._bleu[y][x] = 255 - _bleu[y][x];
+        }
+    }
+
+    return result;
+}
+
+bool Image::FondClair() const {
+    int total = 0;
+    int count = 0;
+    for (int y = 0; y < _largeur; ++y) {
+        for (int x = 0; x < _longueur; ++x) {
+            total += (_rouge[y][x] + _vert[y][x] + _bleu[y][x]) / 3;
+            ++count;
+        }
+    }
+    float moyenne = static_cast<float>(total) / count;
+    return moyenne > 127.0f; // seuil à ajuster si nécessaire
+}
+
+float Image::Moyenne() const {
+    int total = 0;
+    int count = 0;
+
+    for (int y = 0; y < _largeur; ++y) {
+        for (int x = 0; x < _longueur; ++x) {
+            int gris = (_rouge[y][x] + _vert[y][x] + _bleu[y][x]) / 3;
+            total += gris;
+            ++count;
+        }
+    }
+
+    if (count == 0) return 0.0f; // Pour éviter la division par 0
+    return static_cast<float>(total) / count;
 }
 
 void Image::affiche() const

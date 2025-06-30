@@ -9,6 +9,8 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 #include <imgui.h>
+#include <Eigen/Dense>
+#include <stdexcept>
 
 
 //constante pour les choix de l'utilisateur
@@ -74,6 +76,16 @@ public:
     void setPixel(int x, int y, const ImVec4& color);
 
     sf::Image genererSFImage();
+
+    Image Redimensionner28x28() const;
+
+    Eigen::VectorXf toEigenVector28x28() const;
+
+    Image Inverser() const;
+
+    bool FondClair() const;
+
+    float Moyenne() const;
 
     ///affichage des vecteur de l'image cible
     void affiche() const;

@@ -467,7 +467,7 @@
     <ClCompile Include="NeuralNetwork .cpp" />
     <ClCompile Include="NewImageView.cpp" />
     <ClCompile Include="SaveNetworkView.cpp" />
-    <ClCompile Include="SaveNetworkView.hpp" />
+    <ClInclude Include="SaveNetworkView.hpp" />
     <ClCompile Include="TrainModelView.cpp" />
     <ClCompile Include="ViewManager.cpp" />
   </ItemGroup>
@@ -574,6 +574,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)librairies\eigen-3.4.0;$(ProjectDir)librairies\tinyfiledialogs;$(ProjectDir)librairies\imgui-sfml;$(ProjectDir)librairies\imgui;$(ProjectDir)librairies\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -27,5 +27,10 @@ void TrainModelView::render() {
         //viewManager->pushView(std::make_unique< TODO >());
     }
 
+    ImGui::SetCursorPos(ImVec2((winSize.x - btnSize.x) / 2, (winSize.y - 150) / 2 + 160));
+    if (ImGui::Button("Retour", btnSize)) {
+        viewManager->popView();
+    }
+
     ImGui::End();
 }

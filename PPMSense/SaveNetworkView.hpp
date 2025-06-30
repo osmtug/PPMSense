@@ -1,11 +1,14 @@
 #pragma once
 
 #include "IView.hpp"
+#include <imgui.h>
+#include "SaveNetworkView.hpp"
+#include "ViewManager.hpp"
+#include "tinyfiledialogs.h"
 #include <string>
-#include <vector>
-#include <thread>
-#include <Eigen/Dense>
 #include "NeuralNetwork.hpp"
+#include <fstream>
+#include <sstream>
 
 class SaveNetworkView : public IView {
 public:

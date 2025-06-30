@@ -17,8 +17,8 @@ public:
     int predict(const Eigen::VectorXf& input);
     float evaluate(const std::vector<Eigen::VectorXf>& inputs, const std::vector<int>& labels);
 
-    bool save(const std::string& filename) const;
-    bool load(const std::string& filename);
+    bool save(std::string& filename) const;
+    bool load(std::string& filename);
 
 private:
     std::vector<int> layers;

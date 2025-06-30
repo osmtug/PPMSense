@@ -1,7 +1,5 @@
 #include <imgui.h>
 #include "SaveNetworkView.hpp"
-#include <Eigen/Dense>
-#include "EditView.hpp"
 #include "ViewManager.hpp"
 #include "tinyfiledialogs.h"
 #include <string>
@@ -54,23 +52,22 @@ void SaveNetworkView::render() {
 
     ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
     ImGui::InputText("##filePath1", path, sizeof(path));
-    ImGui::PopItemWidth();
     ImGui::SameLine();
 
     if (ImGui::Button("Parcourir...")) {
-        const char* filterPatterns[] = { "aucun" };
-        const char* path = tinyfd_saveFileDialog(
-            "Choisir un dossier où sauvegarder",
-            "ne_pas_remplir", // Nom de fichier par défaut
+        const char* filters[] = { "*.nn" }; // Tu peux changer ici si tu veux filtrer
+        const char* selectedPath = tinyfd_saveFileDialog(
+            "Choisir un fichier de sauvegarde",
+            "reseau.nn", // Suggestion de nom
             1,
-            filterPatterns,
-            "Fichiers"
+            filters,
+            "Fichier réseau"
         );
-        char* dossierPath = path ? new char[1024] : nullptr; // Allouer un buffer pour le chemin du dossier
-        if (path) {
-            strncpy_s(dossierPath, sizeof(dossierPath), path, _TRUNCATE);
+
+        if (selectedPath) {
+            strncpy_s(path, sizeof(path), selectedPath, _TRUNCATE);
         }
-        couperDernierDossier(dossierPath); // Coupe le nom du fichier pour ne garder que le dossier
+        couperDernierDossier(path);
     }
 
     ImGui::Spacing(); ImGui::Spacing();
@@ -88,16 +85,21 @@ void SaveNetworkView::render() {
     ImGui::Spacing(); ImGui::Spacing();
 
 
-    float buttonWidth = 120.0f;
+    float buttonWidth = 100.0f;
+    float spacing = ImGui::GetStyle().ItemSpacing.x; // espacement standard entre les boutons
+    float totalWidth = buttonWidth * 2 + spacing;
+
     float avail = ImGui::GetContentRegionAvail().x;
-    ImGui::SetCursorPosX((avail - buttonWidth) * 0.5f);
+    ImGui::SetCursorPosX((avail - totalWidth) * 0.5f);  // Centre le groupe
+
     if (ImGui::Button("Annuler", ImVec2(buttonWidth, 0))) {
         viewManager->popView();
         ImGui::End();
         return;
     }
+
     ImGui::SameLine();
-    ImGui::SetCursorPosX((avail - buttonWidth) * 0.5f);
+
     if (ImGui::Button("Sauvegarder", ImVec2(buttonWidth, 0))) {
         if (strlen(fileName) > 0 && strlen(path) > 0) {
             std::string cheminComplet = std::string(path) + "/" + fileName;

@@ -3,6 +3,7 @@
 #include <imgui.h>
 #include <imgui-SFML.h>
 #include <SFML/OpenGL.hpp>
+#include <tinyfiledialogs.h>
 
 
 
@@ -76,6 +77,44 @@ void DrawView::renderSidebar() {
 
     // Slider rayon pinceau (exemple)
     ImGui::SliderInt("Rayon", &brushRadius, 1, 50);
+
+    // Espace dynamique vers le bas
+    float space_left = ImGui::GetContentRegionAvail().y;
+    ImGui::Dummy(ImVec2(0.0f, space_left - 100)); // Ajuste selon la hauteur estimée des widgets
+
+    // --- Sélection du dossier ---
+    static char savePath[1024] = "";
+    static char fileName[256] = "";
+
+    // InputText pour le chemin du dossier
+    ImGui::Text("Chemin du dossier de sauvegarde :");
+    ImGui::InputText("###spath", savePath, sizeof(savePath));
+
+    // Bouton "Parcourir"
+    ImGui::SameLine();
+    if (ImGui::Button("Parcourir")) {
+        const char* filters[] = { "*.ppm" }; // Tu peux changer ici si tu veux filtrer
+        const char* selectedPath = tinyfd_saveFileDialog(
+            "Choisir un fichier de sauvegarde",
+            "image.ppm", // Suggestion de nom
+            1,
+            filters,
+            "Fichier réseau"
+        );
+        if (selectedPath) {
+            strncpy_s(savePath, sizeof(savePath), selectedPath, _TRUNCATE);
+        }
+    }
+
+    // --- Bouton Sauvegarder centré ---
+    float buttonWidth = 120.0f;
+    float regionWidth = ImGui::GetContentRegionAvail().x;
+    ImGui::SetCursorPosX((regionWidth - buttonWidth) * 0.5f);
+
+    if (ImGui::Button("Sauvegarder", ImVec2(buttonWidth, 0))) {
+        image.faitImage(savePath);
+        tinyfd_messageBox("Info", "Sauvegarde effectuée avec succès", "ok", "info", 1);
+    }
 }
 
 void DrawView::render() {

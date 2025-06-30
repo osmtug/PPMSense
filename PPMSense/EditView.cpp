@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include <gl/GL.h>
 #include <functional>
+#include "NeuralNetwork.hpp"
 
 
 int paramInt1 = 0;
@@ -98,7 +99,8 @@ void EditView::render() {
         addButton("Luminosite & Contraste", [&] { outilActif = OutilActif::LumiContraste; paramInt1 = 0; paramInt2 = 0; });
         addButton("Rogner", [&] { outilActif = OutilActif::Rogner; paramInt1 = 0; paramInt2 = 0; paramInt3 = 0; paramInt4 = 0; });
         addButton("Rotation", [&] { outilActif = OutilActif::Rotation; });
-		addButton("Retourner", [&] { outilActif = OutilActif::Retourner; });
+        addButton("Retourner", [&] { outilActif = OutilActif::Retourner; });
+        addButton("Devine Nombre", [&] { outilActif = OutilActif::GuessNumber; });
         addButton("Sauvegarder", [&] { outilActif = OutilActif::Sauvegarder; });
         addButton("Annuler (la derniere modif)", [&] {
             image = getHistoriqueImage(historique.size() - 1);
@@ -244,6 +246,10 @@ void EditView::renderSidebar() {
 
     case OutilActif::Sauvegarder:
         renderSauvegarde();
+        break;
+    
+    case OutilActif::GuessNumber:
+        renderGuess();
 
     default:
         ImGui::Text("Outil inconnu.");
@@ -364,6 +370,63 @@ void EditView::renderRetourner() {
 	if (ImGui::Button("Symetrie Horizontale")) {
 		setImage(image.retournementH());
 	}
+}
+
+void EditView::renderGuess() {
+    static char nnoFilePath[256] = "";
+    static bool inverserImage = false;
+
+    ImGui::Text("entrez un fichier de modele entrainer (.nno) :");
+
+    ImGui::PushItemWidth(ImGui::GetContentRegionAvail().x - 110);
+    ImGui::InputText("##DossierPathNNO", nnoFilePath, sizeof(nnoFilePath));
+    ImGui::PopItemWidth();
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Parcourir...")) {
+        const char* filterPatterns[] = { "*.nno" };
+        const char* path = tinyfd_openFileDialog(
+            "Choisir un fichier .nno",
+            "",
+            1,
+            filterPatterns,
+            "Fichiers NNO",
+            0
+        );
+        if (path) {
+            strncpy_s(nnoFilePath, sizeof(nnoFilePath), path, _TRUNCATE);
+        }
+    }
+
+    ImGui::Checkbox("L'image a t'elle un fond claire (blanc)", &inverserImage);
+
+    ImGui::Spacing();
+    if (ImGui::Button("Deviner")) {
+        Image resized = image.Redimensionner28x28();
+        resized = resized.NiveauGris();
+        int val = resized.Moyenne();
+        resized = resized.noirEtBlanc(val);
+        if (inverserImage) {
+            resized = resized.Inverser();
+        }
+
+        Eigen::VectorXf input = resized.toEigenVector28x28();
+        NeuralNetwork nn;
+
+        std::string pathStr = nnoFilePath;
+        nn.load(pathStr);
+        int prediction = nn.predict(input);
+
+        std::string cheminComplet = "";
+        tinyfd_messageBox(
+            "Info",
+            (std::string("Le modèle a prédit qu il y a, sur cette image, le chiffre : ") + std::to_string(prediction)).c_str(),
+            "info",
+            "ok",
+            1
+        );
+    }
 }
 
 void couperDernierDossier(char* path) {

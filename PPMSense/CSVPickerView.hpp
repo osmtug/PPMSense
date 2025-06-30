@@ -17,6 +17,7 @@ public:
 private:
     char filePathTrain[1024];
     char filePathTest[1024];
+    char modelPath[1024];
     NeuralNetwork trainedNN;
     float trainProgress = 0.0f;
     bool training = false;

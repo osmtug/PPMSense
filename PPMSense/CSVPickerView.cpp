@@ -9,6 +9,7 @@
 #include <fstream>
 #include <sstream>
 #include "SaveNetworkView.hpp"
+#include "IView.hpp"
 
 CSVPickerView::CSVPickerView() {
     filePathTrain[0] = '\0';
@@ -17,7 +18,7 @@ CSVPickerView::CSVPickerView() {
 
 void CSVPickerView::render() {
     ImGui::SetNextWindowSize(ImVec2(600, 200), ImGuiCond_Always);
-    ImVec2 windowSize(600, 250);
+    ImVec2 windowSize(800, 300);
     ImVec2 center = ImGui::GetMainViewport()->GetCenter();
     ImGui::SetNextWindowSize(windowSize, ImGuiCond_Always);
     ImGui::SetNextWindowPos(ImVec2(center.x - windowSize.x / 2, center.y - windowSize.y / 2), ImGuiCond_Always);
@@ -65,8 +66,6 @@ void CSVPickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing();
 
-    ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
-
     // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("Chemin du fichier de teste :");
@@ -93,6 +92,32 @@ void CSVPickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing();
 
+    // Centrage horizontal
+    ImGui::Dummy(ImVec2(0.0f, 10.0f));
+    ImGui::Text("Chemin du fichier de model ia deja entrainer (optionnel) :");
+
+    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::InputText("##filePath3", modelPath, sizeof(modelPath));
+    ImGui::PopItemWidth();
+    ImGui::SameLine();
+
+    if (ImGui::Button("Parcourir model")) {
+        const char* filterPatterns[] = { "*.nno" };
+        const char* path = tinyfd_openFileDialog(
+            "Choisir un fichier .nno",
+            "",
+            1,
+            filterPatterns,
+            "Fichiers nno",
+            0
+        );
+        if (path) {
+            strncpy_s(modelPath, sizeof(modelPath), path, _TRUNCATE);
+        }
+    }
+
+    ImGui::Spacing(); ImGui::Spacing();
+
     // Centrer le bouton "Modifier"
     float buttonWidth = 120.0f;
     float avail = ImGui::GetContentRegionAvail().x;
@@ -111,7 +136,17 @@ void CSVPickerView::render() {
             trainProgress = 0.0f;
 
             trainingThread = std::thread([this, X_train, y_train, X_test, y_test]() {
-                trainedNN = NeuralNetwork({ 28 * 28, 100, 10 }, 0.1f);
+                const char* extension = ".nno";
+                size_t pathLen = strlen(modelPath);
+                size_t extLen = strlen(extension);
+
+                if (pathLen >= extLen && strcmp(modelPath + pathLen - extLen, extension) == 0) {
+                    std::string pathStr = modelPath;
+                    trainedNN.load(pathStr);
+                }
+                else {
+                    trainedNN = NeuralNetwork({ 28 * 28, 128, 64, 10 }, 0.01f);
+                }
                 trainedNN.trainDataset(X_train, y_train, 10, &trainProgress);
                 float acc = trainedNN.evaluate(X_test, y_test);
 
