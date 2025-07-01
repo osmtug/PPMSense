@@ -22,7 +22,6 @@ EditView::EditView(const std::string& path)
     }
     catch (const std::exception& e) {
         loaded = false;
-        // Tu peux aussi afficher une erreur avec tinyfd_messageBox
     }
 }
 
@@ -64,7 +63,7 @@ void EditView::render() {
     ImGui::EndChild(); // Fin partie haute
 
     // Partie basse : les boutons (hauteur fixe)
-    ImGui::BeginChild("BoutonsAction", ImVec2(0, 0), true); // hauteur 0 => prend le reste
+    ImGui::BeginChild("BoutonsAction", ImVec2(0, 0), true); 
 
     
 
@@ -147,14 +146,11 @@ void EditView::renderImageWithOverlay(bool modeRognage) {
     ImGui::Image((ImTextureID)(intptr_t)textureID, finalSize);
 
     if (modeRognage) {
-        // Dessin des zones à rogner
         ImDrawList* drawList = ImGui::GetWindowDrawList();
         ImVec2 imagePos = ImGui::GetItemRectMin();
 
-        // Couleur semi-transparente noire
         ImU32 overlayColor = IM_COL32(0, 0, 0, 180);
 
-        // Convertir les pixels rognés en taille écran
         float hTop = paramInt1 * scale;
         float hBottom = paramInt2 * scale;
         float wLeft = paramInt3 * scale;
@@ -432,7 +428,7 @@ void EditView::renderGuess() {
 void couperDernierDossier(char* path) {
     char* dernierSlash = std::strrchr(path, '\\');
     if (dernierSlash) {
-        *dernierSlash = '\0'; // Coupe la chaîne ici
+        *dernierSlash = '\0'; 
     }
 }
 
@@ -452,7 +448,7 @@ void EditView::renderSauvegarde() {
         const char* filterPatterns[] = { "aucun" };
         const char* path = tinyfd_saveFileDialog(
             "Choisir un fichier .ppm à sauvegarder",
-            "ne_pas_remplir", // Nom de fichier par défaut
+            "ne_pas_remplir", 
             1,
             filterPatterns,
             "Fichiers PPM"

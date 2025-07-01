@@ -52,11 +52,10 @@ void DrawView::drawLineOnImage(ImVec2 p1, ImVec2 p2) {
         float t = i / (float)steps;
         int x = static_cast<int>(p1.x + t * (p2.x - p1.x));
         int y = static_cast<int>(p1.y + t * (p2.y - p1.y));
-        drawCircleOnImage(x, y);  // dessine un cercle autour du point
+        drawCircleOnImage(x, y);  
     }
 }
 
-// Dans ta fonction de dessin principale :
 void DrawView::onDraw(int mouseX, int mouseY) {
     if (lastPos.x < 0) {
         lastPos = ImVec2(mouseX, mouseY);
@@ -75,28 +74,23 @@ void DrawView::renderSidebar() {
 
     ImGui::ColorEdit4("Couleur", (float*)&brushColor, ImGuiColorEditFlags_NoInputs);
 
-    // Slider rayon pinceau (exemple)
     ImGui::SliderInt("Rayon", &brushRadius, 1, 50);
 
-    // Espace dynamique vers le bas
     float space_left = ImGui::GetContentRegionAvail().y;
-    ImGui::Dummy(ImVec2(0.0f, space_left - 100)); // Ajuste selon la hauteur estimée des widgets
+    ImGui::Dummy(ImVec2(0.0f, space_left - 100)); 
 
-    // --- Sélection du dossier ---
     static char savePath[1024] = "";
     static char fileName[256] = "";
 
-    // InputText pour le chemin du dossier
     ImGui::Text("Chemin du dossier de sauvegarde :");
     ImGui::InputText("###spath", savePath, sizeof(savePath));
 
-    // Bouton "Parcourir"
     ImGui::SameLine();
     if (ImGui::Button("Parcourir")) {
-        const char* filters[] = { "*.ppm" }; // Tu peux changer ici si tu veux filtrer
+        const char* filters[] = { "*.ppm" }; 
         const char* selectedPath = tinyfd_saveFileDialog(
             "Choisir un fichier de sauvegarde",
-            "image.ppm", // Suggestion de nom
+            "image.ppm",
             1,
             filters,
             "Fichier réseau"
@@ -106,7 +100,6 @@ void DrawView::renderSidebar() {
         }
     }
 
-    // --- Bouton Sauvegarder centré ---
     float buttonWidth = 120.0f;
     float regionWidth = ImGui::GetContentRegionAvail().x;
     ImGui::SetCursorPosX((regionWidth - buttonWidth) * 0.5f);
@@ -174,7 +167,6 @@ void DrawView::render() {
         updateTexture();
     }
     else {
-        // Bouton relâché ou souris pas sur l'image
         lastPos = ImVec2(-1, -1);
     }
 

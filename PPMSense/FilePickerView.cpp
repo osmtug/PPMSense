@@ -6,7 +6,7 @@
 #include <string>
 
 FilePickerView::FilePickerView() {
-    filePath[0] = '\0'; // initialise la chaîne vide
+    filePath[0] = '\0'; 
 }
 
 void FilePickerView::render() {
@@ -24,7 +24,6 @@ void FilePickerView::render() {
         ImGuiWindowFlags_NoTitleBar
     );
 
-    // Bouton retour (en haut à gauche)
     if (ImGui::Button("< Retour")) {
         viewManager->popView();
         ImGui::End();
@@ -33,11 +32,10 @@ void FilePickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("Chemin du fichier :");
 
-    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::PushItemWidth(-150); 
     ImGui::InputText("##filePath", filePath, sizeof(filePath));
     ImGui::PopItemWidth();
     ImGui::SameLine();
@@ -59,7 +57,6 @@ void FilePickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrer le bouton "Modifier"
     float buttonWidth = 120.0f;
     float avail = ImGui::GetContentRegionAvail().x;
     ImGui::SetCursorPosX((avail - buttonWidth) * 0.5f);

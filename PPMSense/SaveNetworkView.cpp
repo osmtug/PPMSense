@@ -18,7 +18,7 @@ SaveNetworkView::SaveNetworkView(const NeuralNetwork& neuralNetwork)
 void SaveNetworkView::couperDernierDossier(char* path) {
     char* dernierSlash = std::strrchr(path, '\\');
     if (dernierSlash) {
-        *dernierSlash = '\0'; // Coupe la chaîne ici
+        *dernierSlash = '\0'; 
     }
 }
 
@@ -37,7 +37,6 @@ void SaveNetworkView::render() {
         ImGuiWindowFlags_NoTitleBar
     );
 
-    // Bouton retour (en haut à gauche)
     if (ImGui::Button("< Retour")) {
         viewManager->popView();
         ImGui::End();
@@ -46,19 +45,18 @@ void SaveNetworkView::render() {
 
     ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("Chemin du fichier :");
 
-    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::PushItemWidth(-150);
     ImGui::InputText("##filePath1", path, sizeof(path));
     ImGui::SameLine();
 
     if (ImGui::Button("Parcourir...")) {
-        const char* filters[] = { "*.nn" }; // Tu peux changer ici si tu veux filtrer
+        const char* filters[] = { "*.nn" };
         const char* selectedPath = tinyfd_saveFileDialog(
             "Choisir un fichier de sauvegarde",
-            "reseau.nn", // Suggestion de nom
+            "reseau.nn", 
             1,
             filters,
             "Fichier réseau"
@@ -74,11 +72,10 @@ void SaveNetworkView::render() {
 
     ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("nom du fichier :");
 
-    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::PushItemWidth(-150); 
     ImGui::InputText("##filePath2", fileName, sizeof(fileName));
     ImGui::PopItemWidth();
 
@@ -86,11 +83,11 @@ void SaveNetworkView::render() {
 
 
     float buttonWidth = 100.0f;
-    float spacing = ImGui::GetStyle().ItemSpacing.x; // espacement standard entre les boutons
+    float spacing = ImGui::GetStyle().ItemSpacing.x; 
     float totalWidth = buttonWidth * 2 + spacing;
 
     float avail = ImGui::GetContentRegionAvail().x;
-    ImGui::SetCursorPosX((avail - totalWidth) * 0.5f);  // Centre le groupe
+    ImGui::SetCursorPosX((avail - totalWidth) * 0.5f);  
 
     if (ImGui::Button("Annuler", ImVec2(buttonWidth, 0))) {
         viewManager->popView();

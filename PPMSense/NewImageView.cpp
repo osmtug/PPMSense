@@ -41,10 +41,6 @@ void NewImageView::render() {
     ImGui::SetCursorPosX((avail - buttonWidth) * 0.5f);
 
     if (ImGui::Button("Créer", ImVec2(buttonWidth, 0))) {
-        // Crée une image noire (vecteurs 2D de zéros)
-        //Image image(largeur, hauteur);  
-
-        // Redirige vers EditView avec cette image
         viewManager->pushView(std::make_unique<DrawView>(largeur, hauteur));
     }
 

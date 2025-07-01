@@ -31,7 +31,6 @@ void CSVPickerView::render() {
         ImGuiWindowFlags_NoTitleBar
     );
 
-    // Bouton retour (en haut à gauche)
     if (ImGui::Button("< Retour")) {
         viewManager->popView();
         ImGui::End();
@@ -40,11 +39,10 @@ void CSVPickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("Chemin du fichier de training :");
 
-    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::PushItemWidth(-150); 
     ImGui::InputText("##filePath1", filePathTrain, sizeof(filePathTrain));
     ImGui::PopItemWidth();
     ImGui::SameLine();
@@ -66,11 +64,10 @@ void CSVPickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("Chemin du fichier de teste :");
 
-    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::PushItemWidth(-150); 
     ImGui::InputText("##filePath2", filePathTest, sizeof(filePathTest));
     ImGui::PopItemWidth();
     ImGui::SameLine();
@@ -92,11 +89,10 @@ void CSVPickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrage horizontal
     ImGui::Dummy(ImVec2(0.0f, 10.0f));
     ImGui::Text("Chemin du fichier de model ia deja entrainer (optionnel) :");
 
-    ImGui::PushItemWidth(-150); // Laisser un peu de place pour le bouton à droite
+    ImGui::PushItemWidth(-150); 
     ImGui::InputText("##filePath3", modelPath, sizeof(modelPath));
     ImGui::PopItemWidth();
     ImGui::SameLine();
@@ -118,7 +114,6 @@ void CSVPickerView::render() {
 
     ImGui::Spacing(); ImGui::Spacing();
 
-    // Centrer le bouton "Modifier"
     float buttonWidth = 120.0f;
     float avail = ImGui::GetContentRegionAvail().x;
     ImGui::SetCursorPosX((avail - buttonWidth) * 0.5f);

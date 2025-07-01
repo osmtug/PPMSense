@@ -25,13 +25,11 @@ void HomeView::render() {
 
     ImGui::SetCursorPos(ImVec2((winSize.x - btnSize.x) / 2, (winSize.y - 150) / 2 + 80));
     if (ImGui::Button("Modifier", btnSize)) {
-        // Passe à la vue FilePicker
         viewManager->pushView(std::make_unique<FilePickerView>());
     }
 
     ImGui::SetCursorPos(ImVec2((winSize.x - btnSize.x) / 2, (winSize.y - 150) / 2 + 160));
     if (ImGui::Button("Entrainer", btnSize)) {
-        // Passe à la vue FilePicker
         viewManager->pushView(std::make_unique<TrainModelView>());
     }
 
